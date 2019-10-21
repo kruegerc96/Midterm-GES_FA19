@@ -4,40 +4,72 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // movement variables
-    [SerializeField] private float speed;
-    [SerializeField] private float sprintMultiplier;
-    private bool isSprinting;
+    // declare a fuckload of variables
+    [SerializeField] private string horizontalInputName;
+    [SerializeField] private string verticalInputName;
+    [SerializeField] private float movementSpeed;
+    private bool isJumping;
 
-    // aim variables
-    [SerializeField] private float horizontalMouseSensitivity;
-    [SerializeField] private float verticalMouseSensitivity;
+    [SerializeField] private AnimationCurve jumpFalloff;
+    [SerializeField] private float jumpMultiplier;
+    [SerializeField] private KeyCode jumpKey;
 
-    void Start()
+    private CharacterController charController;
+
+    private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        // get that character controller. get it good
+        charController = GetComponent<CharacterController>();
     }
 
-    void Update()
+    private void Update()
     {
-        // movement
-        float translation = Input.GetAxis("Vertical") * speed;
-        float straffe = Input.GetAxis("Horizontal") * speed;
-        translation *= Time.deltaTime;
-        straffe *= Time.deltaTime;
+        // call a bunch of bullshit right below this
+        PlayerMovement();
+    }
 
-        transform.Translate(straffe, 0, translation);
+    private void PlayerMovement()
+    {
+        // this is where the movement magic happens
 
-        // sprint
-        if (Input.GetKeyDown("LeftShift"))
+        //declare variables for future use
+        float vertInput = Input.GetAxis(verticalInputName) * movementSpeed;
+        float horizInput = Input.GetAxis(horizontalInputName) * movementSpeed;
+
+
+        Vector3 forwardMovement = transform.forward * vertInput;
+        Vector3 rightMovement = transform.right * horizInput;
+
+        charController.SimpleMove(forwardMovement + rightMovement);
+
+        JumpInput();
+    }
+
+    private void JumpInput()
+    {
+        if(Input.GetKeyDown(jumpKey) && !isJumping)
         {
-            speed = speed * sprintMultiplier;
+            isJumping = true;
+            StartCoroutine(JumpEvent());
         }
+    }
 
-        // unlock cursor if needed
-        if (Input.GetKeyDown("escape"))
+    private IEnumerator JumpEvent()
+    {
+        charController.slopeLimit = 90.0f;
+        float timeInAir = 0.0f;
+        
+        do
         {
-            Cursor.lockState = CursorLockMode.None;
+            float jumpForce = jumpFalloff.Evaluate(timeInAir);
+            charController.Move(Vector3.up * jumpForce * jumpMultiplier * Time.deltaTime);
+            timeInAir += Time.deltaTime;
+            yield return null;
+
         }
+        while (!charController.isGrounded && charController.collisionFlags != CollisionFlags.Above);
+
+        charController.slopeLimit = 45.0f;
+        isJumping = false;
     }
 }

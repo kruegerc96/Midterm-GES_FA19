@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // declare a fuckload of variables
+    // aim variables
+    [SerializeField] private float horizontalMouseSensitivity = 0.75f;
+    [SerializeField] private float verticalMouseSensitivity = 0.75f;
+
+    // movement variables
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
     [SerializeField] private float movementSpeed;
-    [SerializeField] private float jumps = 0f;
-    //private bool isJumping;
 
+    // jump variables
     [SerializeField] private AnimationCurve jumpFalloff;
     [SerializeField] private float jumpMultiplier;
+    [SerializeField] private float jumps = 0f;
     [SerializeField] private KeyCode jumpKey;
 
     private CharacterController charController;
@@ -21,12 +25,16 @@ public class PlayerController : MonoBehaviour
     {
         // get that character controller. get it good
         charController = GetComponent<CharacterController>();
+
+        // lock cursor
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
         // call a bunch of bullshit right below this
         PlayerMovement();
+        MouseLook();
     }
 
     private void PlayerMovement()
@@ -46,11 +54,25 @@ public class PlayerController : MonoBehaviour
         JumpInput();
     }
 
+    private void MouseLook()
+    {
+        // adjust camera
+        float deltaMouseHorizontal = Input.GetAxis("Mouse X") * horizontalMouseSensitivity;
+        float newCameraRotY = transform.eulerAngles.y + deltaMouseHorizontal;
+
+        transform.eulerAngles = new Vector3(0, newCameraRotY, 0);
+
+        // unlock cursor if needed
+        if (Input.GetKeyDown("escape"))
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
     private void JumpInput()
     {
-        if(Input.GetKeyDown(jumpKey) /*&& !isJumping*/ && jumps < 2)
+        if(Input.GetKeyDown(jumpKey) && jumps < 2)
         {
-            //isJumping = true;
             StartCoroutine(JumpEvent());
         }
     }
@@ -72,6 +94,5 @@ public class PlayerController : MonoBehaviour
 
         charController.slopeLimit = 45.0f;
         jumps = 0;
-        //isJumping = false;
     }
 }

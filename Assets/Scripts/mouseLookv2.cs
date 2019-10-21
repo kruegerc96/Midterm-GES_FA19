@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mouseLook : MonoBehaviour
+public class mouseLookv2 : MonoBehaviour
 {
     // aim variables
     [SerializeField] private float horizontalMouseSensitivity = 0.75f;
@@ -16,10 +16,12 @@ public class mouseLook : MonoBehaviour
     void Update()
     {
         // adjust camera
+        float deltaMouseHorizontal = Input.GetAxis("Mouse X") * horizontalMouseSensitivity;
         float deltaMouseVertical = Input.GetAxis("Mouse Y") * verticalMouseSensitivity;
+        float newCameraRotY = transform.eulerAngles.y + deltaMouseHorizontal;
         float newCameraRotX = transform.eulerAngles.x - deltaMouseVertical;
 
-        transform.eulerAngles = new Vector3(newCameraRotX, 0, 0);
+        transform.eulerAngles = new Vector3(newCameraRotX, newCameraRotY, 0);
 
         // unlock cursor if needed
         if (Input.GetKeyDown("escape"))

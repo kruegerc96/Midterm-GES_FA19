@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
     [SerializeField] private float movementSpeed;
-    private bool isJumping;
+    [SerializeField] private float jumps = 0f;
+    //private bool isJumping;
 
     [SerializeField] private AnimationCurve jumpFalloff;
     [SerializeField] private float jumpMultiplier;
@@ -47,9 +48,9 @@ public class PlayerController : MonoBehaviour
 
     private void JumpInput()
     {
-        if(Input.GetKeyDown(jumpKey) && !isJumping)
+        if(Input.GetKeyDown(jumpKey) /*&& !isJumping*/ && jumps < 2)
         {
-            isJumping = true;
+            //isJumping = true;
             StartCoroutine(JumpEvent());
         }
     }
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         charController.slopeLimit = 90.0f;
         float timeInAir = 0.0f;
+        jumps++;
         
         do
         {
@@ -65,11 +67,11 @@ public class PlayerController : MonoBehaviour
             charController.Move(Vector3.up * jumpForce * jumpMultiplier * Time.deltaTime);
             timeInAir += Time.deltaTime;
             yield return null;
-
         }
         while (!charController.isGrounded && charController.collisionFlags != CollisionFlags.Above);
 
         charController.slopeLimit = 45.0f;
-        isJumping = false;
+        jumps = 0;
+        //isJumping = false;
     }
 }

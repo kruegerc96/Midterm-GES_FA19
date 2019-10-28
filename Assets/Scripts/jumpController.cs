@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class jumpController : MonoBehaviour
 {
-    // aim variables
-    [SerializeField] private float horizontalMouseSensitivity = 0.75f;
-    [SerializeField] private float verticalMouseSensitivity = 0.75f;
-
-    // movement variables
-    [SerializeField] private string horizontalInputName;
-    [SerializeField] private string verticalInputName;
-    [SerializeField] private float movementSpeed;
-
     // jump variables
     [SerializeField] private AnimationCurve jumpFalloff;
     [SerializeField] private float jumpMultiplier;
@@ -25,37 +16,17 @@ public class PlayerController : MonoBehaviour
     {
         // get that character controller. get it good
         charController = GetComponent<CharacterController>();
-
-        // lock cursor
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
         // call a bunch of bullshit right below this
-        PlayerMovement();
-    }
-
-    private void PlayerMovement()
-    {
-        // this is where the movement magic happens
-
-        //declare variables for future use
-        float vertInput = Input.GetAxis(verticalInputName) * movementSpeed;
-        float horizInput = Input.GetAxis(horizontalInputName) * movementSpeed;
-
-
-        Vector3 forwardMovement = transform.forward * vertInput;
-        Vector3 rightMovement = transform.right * horizInput;
-
-        charController.SimpleMove(forwardMovement + rightMovement);
-
         JumpInput();
     }
 
     private void JumpInput()
     {
-        if(Input.GetKeyDown(jumpKey) && jumps < 2)
+        if (Input.GetKeyDown(jumpKey) && jumps < 2)
         {
             StartCoroutine(JumpEvent());
         }
@@ -66,7 +37,7 @@ public class PlayerController : MonoBehaviour
         charController.slopeLimit = 90.0f;
         float timeInAir = 0.0f;
         jumps++;
-        
+
         do
         {
             float jumpForce = jumpFalloff.Evaluate(timeInAir);

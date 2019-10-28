@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mouseLook : MonoBehaviour
+public class mouseLookVertical : MonoBehaviour
 {
     // aim variables
-    [SerializeField] private float horizontalMouseSensitivity = 0.75f;
-    [SerializeField] private float verticalMouseSensitivity = 0.75f;
+    [SerializeField] public float verticalMouseSensitivity = 0.75f;
 
     private void Start()
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class playerController : MonoBehaviour
 {
     // aim variables
     [SerializeField] private float horizontalMouseSensitivity = 0.75f;

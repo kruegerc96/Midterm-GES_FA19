@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mouseLookHorizontal : MonoBehaviour
+public class mouseLook : MonoBehaviour
 {
     // aim variables
     [SerializeField] public float horizontalMouseSensitivity = 0.75f;
+    [SerializeField] public float verticalMouseSensitivity = 0.75f;
 
     private void Start()
     {
@@ -13,10 +14,11 @@ public class mouseLookHorizontal : MonoBehaviour
 
     void Update()
     {
-        // adjust body direction
         float deltaMouseHorizontal = Input.GetAxis("Mouse X") * horizontalMouseSensitivity;
+        float deltaMouseVertical = Input.GetAxis("Mouse Y") * verticalMouseSensitivity;
+        float newCameraRotX = transform.eulerAngles.x - deltaMouseVertical;
         float newBodyRotY = transform.eulerAngles.y + deltaMouseHorizontal;
 
-        transform.eulerAngles = new Vector3(0, newBodyRotY, 0);
+        transform.eulerAngles = new Vector3(newCameraRotX, newBodyRotY, 0);
     }
 }

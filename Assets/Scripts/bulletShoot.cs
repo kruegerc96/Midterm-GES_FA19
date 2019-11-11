@@ -12,14 +12,13 @@ public class bulletShoot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            GameObject bullet = Instantiate(bulletPrefab, GameObject.("Bullet Spawn").transform.position, Quaternion.identity);
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
             // A quaternion multiplied by a Vector applies that rotation to the Vector.
             Vector3 direction = Quaternion.Euler(90, 0, 0) * transform.forward;
 
-            rb.AddForce(direction * shootForce, ForceMode.Impulse);
-            Debug.Break();
+            rb.velocity = transform.TransformDirection(Vector3.forward * 10);
         }
     }
 }

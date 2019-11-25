@@ -8,33 +8,31 @@ public class bulletShoot : MonoBehaviour
     [SerializeField] float bulletSpeed;
     [SerializeField] float fireRate;
     [SerializeField] GameObject bulletSpawn;
-    bool shooting = false;
+
+    private float timeLastFired = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        CheckMouseInput();
+        
+    }
 
-        Fire();
+    void FixedUpdate()
+    {
+        CheckMouseInput();
     }
 
     void CheckMouseInput()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            shooting = true;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            shooting = false;
-        }
-    }
+        //
+        float timeSinceLastFired = Time.time - timeLastFired;
 
-    void Fire()
-    {
-        if (shooting == true)
+        //calculates true or false
+        bool canFire = timeSinceLastFired >= (1 / fireRate);
+
+        if(Input.GetButton("Fire1") && canFire)
         {
-            InvokeRepeating("BulletSpawn", 0f, fireRate);
+            BulletSpawn();
         }
     }
 
@@ -42,5 +40,7 @@ public class bulletShoot : MonoBehaviour
     {
         Rigidbody instantiatedBullet = Instantiate(bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
         instantiatedBullet.velocity = transform.TransformDirection(new Vector3(0, 0, bulletSpeed));
+
+        timeLastFired = Time.time;
     }
 }

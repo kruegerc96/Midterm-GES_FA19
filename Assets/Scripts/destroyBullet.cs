@@ -44,4 +44,13 @@ public class destroyBullet : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            Debug.Log("Hit!");
+            Destroy(gameObject);
+        }
+    }
 }

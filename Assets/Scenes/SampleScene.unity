@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 476064984}
   - component: {fileID: 476064983}
   - component: {fileID: 476064982}
+  - component: {fileID: 476064985}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Player
@@ -303,6 +304,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476064980}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &476064985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476064980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f3f785caa1a274e99f64a4229c7ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookSpeed: 3
 --- !u!1 &635310821
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +455,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
-  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -515,19 +528,6 @@ Transform:
   m_Father: {fileID: 1334626681}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45af84abfb4c99a4f9d85685ad51fafa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  verticalMouseSensitivity: 0.75
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,8 +541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 298531741523482240, guid: f0fe82b507fb6c84f8eeb3f14dafaa51, type: 3}
-  shootForce: 10
-  shotsPerSecond: 10
+  bulletSpeed: 10
+  fireRate: 5
 --- !u!1 &1266653250
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +645,6 @@ GameObject:
   - component: {fileID: 1334626681}
   - component: {fileID: 1334626682}
   - component: {fileID: 1334626683}
-  - component: {fileID: 1334626684}
   - component: {fileID: 1334626685}
   m_Layer: 0
   m_Name: Player
@@ -689,8 +688,10 @@ MonoBehaviour:
   verticalInputName: Vertical
   movementSpeed: 8
   jumpFalloff:
+    serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 1
       inSlope: -1.5
       outSlope: -1.5
@@ -698,7 +699,8 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
-    - time: 1
+    - serializedVersion: 3
+      time: 1
       value: -0.5
       inSlope: -1.5
       outSlope: -1.5
@@ -712,7 +714,6 @@ MonoBehaviour:
   jumpMultiplier: 15
   jumps: 0
   jumpKey: 32
-  charController: {fileID: 0}
 --- !u!143 &1334626683
 CharacterController:
   m_ObjectHideFlags: 0
@@ -731,19 +732,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1334626684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334626680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6f3f785caa1a274e99f64a4229c7ace, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalMouseSensitivity: 0.75
 --- !u!114 &1334626685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,7 +739,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334626680}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46e3f1d5d8986d84382fdda831434806, type: 3}
   m_Name: 

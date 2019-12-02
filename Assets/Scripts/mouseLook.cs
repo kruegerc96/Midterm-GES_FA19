@@ -7,15 +7,26 @@ public class mouseLook : MonoBehaviour
     public float lookSpeed = 3;
     private Vector2 rotation = Vector2.zero;
 
-    public void Look() // Look rotation (UP down is Camera) (Left right is Transform rotation)
+    private void Start()
     {
-        rotation.y += Input.GetAxis("Mouse X");
+        // lock cursor
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void Update()
+    {
+        //unlock cursor if player presses Escape
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        // Look rotation (UP down is Camera) (Left right is Transform rotation)
         rotation.x += -Input.GetAxis("Mouse Y");
+        rotation.y += Input.GetAxis("Mouse X");
 
         rotation.x = Mathf.Clamp(rotation.x, -15f, 15f);
 
-        transform.eulerAngles = new Vector2(0, rotation.y) * lookSpeed;
-
-        Camera.main.transform.localRotation = Quaternion.Euler(rotation.x * lookSpeed, 0, 0);
+        transform.eulerAngles = new Vector3(rotation.x, rotation.y, 0) * lookSpeed;
     }
 }

@@ -2,81 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class playerController : MonoBehaviour
 {
-    // aim variables
-    [SerializeField] private float horizontalMouseSensitivity = 0.75f;
-    [SerializeField] private float verticalMouseSensitivity = 0.75f;
-
-    // movement variables
-    [SerializeField] private string horizontalInputName;
-    [SerializeField] private string verticalInputName;
+    // variables
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float sprintMultiplier;
+    [SerializeField] private float jumpForce;
 
-    // jump variables
-    [SerializeField] private AnimationCurve jumpFalloff;
-    [SerializeField] private float jumpMultiplier;
-    [SerializeField] private float jumps = 0f;
-    [SerializeField] private KeyCode jumpKey;
+    private int numberOfJumps = 0;
+    private int maxJumps = 2;
+    private bool isOnGround = true;
 
-    private CharacterController charController;
+    public Rigidbody playerRb;
 
     private void Start()
     {
-        // get that character controller. get it good
-        charController = GetComponent<CharacterController>();
-
-        // lock cursor
-        Cursor.lockState = CursorLockMode.Locked;
+        playerRb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        // call a bunch of bullshit right below this
         PlayerMovement();
+        CheckJumpInput();
     }
 
     private void PlayerMovement()
     {
         // this is where the movement magic happens
-
         //declare variables for future use
-        float vertInput = Input.GetAxis(verticalInputName) * movementSpeed;
-        float horizInput = Input.GetAxis(horizontalInputName) * movementSpeed;
 
+        //CHANGE TO RELATIVE DIRECTION
 
-        Vector3 forwardMovement = transform.forward * vertInput;
-        Vector3 rightMovement = transform.right * horizInput;
+        float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
+        float vertInput = Input.GetAxis("Vertical") * movementSpeed;
 
-        charController.SimpleMove(forwardMovement + rightMovement);
-
-        JumpInput();
+        Vector3 currentVelocity = playerRb.velocity;
+        currentVelocity.x = horizInput;
+        currentVelocity.z = vertInput;
+        playerRb.velocity = currentVelocity;
     }
 
-    private void JumpInput()
+    private void CheckJumpInput()
     {
-        if(Input.GetKeyDown(jumpKey) && jumps < 2)
+        if (Input.GetButton("Jump") && numberOfJumps < maxJumps)
         {
-            StartCoroutine(JumpEvent());
+            Jump();
         }
     }
 
-    private IEnumerator JumpEvent()
+    private void Jump()
     {
-        charController.slopeLimit = 90.0f;
-        float timeInAir = 0.0f;
-        jumps++;
-        
-        do
-        {
-            float jumpForce = jumpFalloff.Evaluate(timeInAir);
-            charController.Move(Vector3.up * jumpForce * jumpMultiplier * Time.deltaTime);
-            timeInAir += Time.deltaTime;
-            yield return null;
-        }
-        while (!charController.isGrounded && charController.collisionFlags != CollisionFlags.Above);
-
-        charController.slopeLimit = 45.0f;
-        jumps = 0;
+        numberOfJumps++;
     }
 }

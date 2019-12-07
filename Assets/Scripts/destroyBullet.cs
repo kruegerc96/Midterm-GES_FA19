@@ -47,9 +47,9 @@ public class destroyBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "enemy")
+        if (collision.gameObject.tag == "enemy" || collision.collider)
         {
-            Debug.Log("Hit!");
+            Debug.Log("Crack!");
             Destroy(gameObject);
         }
     }

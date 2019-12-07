@@ -6,6 +6,7 @@ public class bulletShoot : MonoBehaviour
 {
     [SerializeField] Rigidbody bullet;
     [SerializeField] float bulletSpeed;
+    [SerializeField] float bulletDamage;
     [SerializeField] float fireRate;
     [SerializeField] float magazineSize;
     [SerializeField] GameObject bulletSpawn;

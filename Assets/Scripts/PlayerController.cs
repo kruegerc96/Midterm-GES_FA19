@@ -22,13 +22,19 @@ public class playerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //reset double jump when player touches the ground
+        if (isOnGround = true)
+        {
+            numberOfJumps = 0;
+        }
+
         PlayerMovement();
         CheckJumpInput();
     }
 
     private void PlayerMovement()
     {
-        // this is where the movement magic happens
+        //this is where the movement magic happens
         //declare variables for future use
 
         //CHANGE TO RELATIVE DIRECTION
@@ -39,7 +45,7 @@ public class playerController : MonoBehaviour
         Vector3 currentVelocity = playerRb.velocity;
         currentVelocity.x = horizInput;
         currentVelocity.z = vertInput;
-        playerRb.velocity = currentVelocity;
+        playerRb.AddRelativeForce(Vector3.forward * movementSpeed);
     }
 
     private void CheckJumpInput()

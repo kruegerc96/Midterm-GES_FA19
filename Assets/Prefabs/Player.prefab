@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 2380914313633647732}
   - component: {fileID: 2380914313633647733}
   - component: {fileID: 2380914313633647729}
-  - component: {fileID: 2380914313633647730}
+  - component: {fileID: 6860121657424184330}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -222,11 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1040913798650823663, guid: f0fe82b507fb6c84f8eeb3f14dafaa51, type: 3}
   bulletSpeed: 350
-  bulletDamage: 0
   fireRate: 12.5
   magazineSize: 30
   bulletSpawn: {fileID: 2380914313329341809}
---- !u!114 &2380914313633647730
+--- !u!114 &6860121657424184330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,10 +234,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2380914313633647734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6f3f785caa1a274e99f64a4229c7ace, type: 3}
+  m_Script: {fileID: 11500000, guid: 5aa0235b342a4dd4289352697160e715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookSpeed: 2
+  lookSpeed: 3
 --- !u!1 &2380914314227063771
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2380914314227063771}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.010000048, y: -0.079999804, z: 0.13000062}
+  m_LocalPosition: {x: -0.010000048, y: -0.079999685, z: 0.13000062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 223117403410392250}
@@ -340,8 +339,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2380914314528893054}
-  - component: {fileID: 2380914314528893053}
   - component: {fileID: 2380914314528893051}
+  - component: {fileID: 7574948453844002890}
+  - component: {fileID: 3714303669521210962}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -365,21 +365,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2380914314528893053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2380914314528893055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 340c3a835081212449aac7a1129c3c33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 5
-  jumpForce: 10
-  gravity: 20
 --- !u!143 &2380914314528893051
 CharacterController:
   m_ObjectHideFlags: 0
@@ -398,6 +383,34 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7574948453844002890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380914314528893055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340c3a835081212449aac7a1129c3c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+  jumpForce: 10
+  gravity: 20
+--- !u!114 &3714303669521210962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380914314528893055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598a0bf06b75d2e4083088d4bd1f76f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookSpeed: 3
 --- !u!1001 &2380914315003852009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,11 +418,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2380914314227063770}
     m_Modifications:
-    - target: {fileID: 2455052152369712243, guid: 45f95c2dfaf4c27418ecbb640536af60,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun
-      objectReference: {fileID: 0}
     - target: {fileID: 2455052152369418323, guid: 45f95c2dfaf4c27418ecbb640536af60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -479,6 +487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.8127
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455052152369712243, guid: 45f95c2dfaf4c27418ecbb640536af60,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f95c2dfaf4c27418ecbb640536af60, type: 3}

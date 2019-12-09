@@ -36,8 +36,8 @@ public class playerController : MonoBehaviour
             moveDirection *= movementSpeed * sprintMultiplier;
         }
 
-        // sprint
-        if (Input.GetKey(KeyCode.LeftShift))
+        // sprint if sprint button is pushed and player is moving forward
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetAxis("Vertical") > 0.1)
         {
             sprintMultiplier = 1.75f;
         }

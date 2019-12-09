@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class destroyEnemy : MonoBehaviour
 {
-    public int score = FindObjectOfType<scoreManager>().currentScore;
-
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame

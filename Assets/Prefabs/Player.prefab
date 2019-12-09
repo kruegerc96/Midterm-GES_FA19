@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1040913798650823663, guid: f0fe82b507fb6c84f8eeb3f14dafaa51, type: 3}
-  bulletSpeed: 200
+  bulletSpeed: 350
   bulletDamage: 0
   fireRate: 12.5
   magazineSize: 30

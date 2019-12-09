@@ -49,7 +49,6 @@ public class destroyBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy" || collision.collider)
         {
-            Debug.Log("Crack!");
             Destroy(gameObject);
         }
     }

@@ -22,7 +22,6 @@ public class destroyEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bullet"))
         {
-            Debug.Log("Hit Head");
             GetPoints();
             Destroy(transform.parent.gameObject);
         }

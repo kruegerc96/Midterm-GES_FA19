@@ -4,60 +4,59 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    // THIS CODE AIDED BY SCRIPT FROM THE UNITY DOCUMENTATION BECAUSE I GOT DESPERATE (https://docs.unity3d.com/ScriptReference/CharacterController.Move.html)
+
     // variables
     [SerializeField] private float movementSpeed;
-    [SerializeField] private float sprintMultiplier;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float gravity;
 
-    private int numberOfJumps = 0;
+    private float sprintMultiplier = 1f;
+    private int currentJumps = 0;
     private int maxJumps = 2;
-    private bool isOnGround = true;
 
-    public Rigidbody playerRb;
+    CharacterController characterController;
 
-    private void Start()
+    private Vector3 moveDirection = Vector3.zero;
+
+    void Start()
     {
-        playerRb = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
     }
 
-    private void FixedUpdate()
+    void Update()
     {
-        //reset double jump when player touches the ground
-        if (isOnGround = true)
+        if (characterController.isGrounded)
         {
-            numberOfJumps = 0;
+            //reset double jump
+            currentJumps = 0;
+
+            // Recalculate move direction directly from axes
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection *= movementSpeed * sprintMultiplier;
         }
 
-        PlayerMovement();
-        CheckJumpInput();
-    }
-
-    private void PlayerMovement()
-    {
-        //this is where the movement magic happens
-        //declare variables for future use
-
-        //CHANGE TO RELATIVE DIRECTION
-
-        float horizInput = Input.GetAxis("Horizontal") * movementSpeed;
-        float vertInput = Input.GetAxis("Vertical") * movementSpeed;
-
-        Vector3 currentVelocity = playerRb.velocity;
-        currentVelocity.x = horizInput;
-        currentVelocity.z = vertInput;
-        playerRb.AddRelativeForce(Vector3.forward * movementSpeed);
-    }
-
-    private void CheckJumpInput()
-    {
-        if (Input.GetButton("Jump") && numberOfJumps < maxJumps)
+        // sprint
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            Jump();
+            sprintMultiplier = 1.75f;
         }
-    }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            sprintMultiplier = 1f;
+        }
 
-    private void Jump()
-    {
-        numberOfJumps++;
+        // jump
+        if (Input.GetButtonDown("Jump") && currentJumps < maxJumps)
+        {
+            currentJumps++;
+            moveDirection.y = jumpForce;
+        }
+
+        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below when the moveDirection is multiplied by deltaTime). This is because gravity should be applied as an acceleration (ms^-2)
+        moveDirection.y -= gravity * Time.deltaTime;
+
+        // Move the controller
+        characterController.Move(moveDirection * Time.deltaTime);
     }
 }

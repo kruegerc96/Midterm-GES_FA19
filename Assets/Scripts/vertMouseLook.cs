@@ -10,13 +10,26 @@ public class vertMouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // lock cursor
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //rotation.x += -Input.GetAxis("Mouse Y");
-        //transform.eulerAngles = new Vector3() * lookSpeed;
+        //change angle of camera based on player input
+        rotation += -Input.GetAxis("Mouse Y");
+
+        Vector3 currentRotation = transform.eulerAngles;
+
+        currentRotation.x = rotation;
+
+        transform.eulerAngles = currentRotation;
+
+        //unlock cursor if player presses Escape
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }

@@ -36,8 +36,7 @@ public class playerController : MonoBehaviour
             //moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             //moveDirection *= movementSpeed * sprintMultiplier;
 
-            moveDirection = Input.GetAxis("Vertical") * transform.forward;
-            moveDirection = Input.GetAxis("Horizontal") * transform.forward;
+            moveDirection = (Input.GetAxis("Vertical") * transform.forward * sprintMultiplier + Input.GetAxis("Horizontal") * transform.right) * movementSpeed;
         }
 
         // sprint if sprint button is pushed and player is moving forward

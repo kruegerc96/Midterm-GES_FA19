@@ -20,6 +20,7 @@ public class destroyEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("bullet"))
         {
             GetPoints();
+            AkSoundEngine.PostEvent("PlayTargetGet", gameObject);
             Destroy(transform.parent.gameObject);
         }
     }

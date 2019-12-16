@@ -186,6 +186,25 @@
 						<ActiveSource Name="JumpJet" ID="{83C45003-0D99-4251-9173-4FD979704A27}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="targetGet" ID="{52EBD27B-E3B8-4DF6-83A5-51096DB24B30}" ShortID="1065096412">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C2A1142-2C06-4750-9999-3DB39E954D29}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7966CE81-E7E9-48FA-95A8-10C49E3C7C9F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="targetGet" ID="{21DD1C2D-5E80-4EC7-9617-71AD9767C907}" ShortID="609766549">
+							<Language>SFX</Language>
+							<AudioFile>targetGet.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="targetGet" ID="{21DD1C2D-5E80-4EC7-9617-71AD9767C907}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

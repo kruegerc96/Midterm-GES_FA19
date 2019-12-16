@@ -47,6 +47,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="PlayTargetGet" ID="{D8DF184D-1FE6-4000-9709-7BC0F0974EB9}">
+					<ChildrenList>
+						<Action Name="" ID="{12A611DD-CEC5-445D-A1BB-945BBE19D75E}" ShortID="700436820">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="targetGet" ID="{52EBD27B-E3B8-4DF6-83A5-51096DB24B30}" WorkUnitID="{3A7B1332-F44F-407A-8B1A-EFBEB9C12B28}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

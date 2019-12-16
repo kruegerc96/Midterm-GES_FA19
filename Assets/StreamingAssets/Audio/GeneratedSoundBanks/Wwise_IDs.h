@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID PLAYJET = 1702250900U;
         static const AkUniqueID PLAYLAND = 3654825836U;
         static const AkUniqueID PLAYMUSIC = 417627684U;
+        static const AkUniqueID PLAYTARGETGET = 177923588U;
     } // namespace EVENTS
 
     namespace BANKS

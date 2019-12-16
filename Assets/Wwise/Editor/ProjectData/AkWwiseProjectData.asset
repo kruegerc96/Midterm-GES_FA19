@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 527cf0cef4605546bc9e54e06201faa6
     GuidInternal: 
-    m_lastTime: -8586250950588300862
+    m_lastTime: -8586250930531270604
     List:
     - name: PlayFire
       guid: 5b8e57cb85354c4fa4d92284f7f7a619
@@ -71,8 +71,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\PlayJet
       maxAttenuation: 0
-      maxDuration: 2.309592
-      minDuration: 2.309592
+      maxDuration: 0.780454
+      minDuration: 0.780454
     - name: PlayLand
       guid: 0a4b776e9a507041b2deda2f898d0668
       id: 3654825836
@@ -85,6 +85,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.317823
       minDuration: 0.304898
+    - name: PlayMusic
+      guid: 7ede883378d8294f8440cbaa50d9c2fe
+      id: 417627684
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayMusic
+        ObjectType: 3
+      Path: Default Work Unit\PlayMusic
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 

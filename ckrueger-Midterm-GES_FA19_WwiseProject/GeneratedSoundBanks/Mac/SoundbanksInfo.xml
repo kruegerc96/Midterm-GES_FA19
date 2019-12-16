@@ -25,6 +25,7 @@
 				<Event Id="1702250900" Name="PlayJet" ObjectPath="\Events\Default Work Unit\PlayJet" DurationType="OneShot" DurationMin="0.780454" DurationMax="0.780454"/>
 				<Event Id="3654825836" Name="PlayLand" ObjectPath="\Events\Default Work Unit\PlayLand" DurationType="OneShot" DurationMin="0.304898" DurationMax="0.317823"/>
 				<Event Id="417627684" Name="PlayMusic" ObjectPath="\Events\Default Work Unit\PlayMusic" DurationType="Infinite"/>
+				<Event Id="177923588" Name="PlayTargetGet" ObjectPath="\Events\Default Work Unit\PlayTargetGet" DurationType="OneShot" DurationMin="0.616644" DurationMax="0.616644"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="14517983" Language="SFX">
@@ -46,6 +47,10 @@
 				<File Id="327529875" Language="SFX">
 					<ShortName>gun1.wav</ShortName>
 					<Path>SFX\gun1_10C4C929.wem</Path>
+				</File>
+				<File Id="609766549" Language="SFX">
+					<ShortName>targetGet.wav</ShortName>
+					<Path>SFX\targetGet_10C4C929.wem</Path>
 				</File>
 				<File Id="767519456" Language="SFX">
 					<ShortName>MusicIntroAndFirstPart.wav</ShortName>

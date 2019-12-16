@@ -611,7 +611,7 @@ MonoBehaviour:
   m_text: "= Out of Ram Studios  =\nPolygun Sample Pack\n\n= Unity =\nCode from the
     Unity Documentation\n\n= Nobiax / Yughues\r =\nYughues Free Concrete BarriersYughues
     Free Concrete Materials\n\n= Dmitrii Kutsenko =\nRPG/FPS Game Assets for PC/Mobile
-    (Industrial Set v2.0)"
+    (Industrial Set v2.0)\n\n= Explosive =\nCartoon Machine Pistol"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -680,12 +680,12 @@ MonoBehaviour:
   m_margin: {x: -2.4226685, y: -0.25759888, z: -2.8494263, w: 2.1538696}
   m_textInfo:
     textComponent: {fileID: 1532714533}
-    characterCount: 251
+    characterCount: 289
     spriteCount: 0
-    spaceCount: 44
-    wordCount: 36
+    spaceCount: 51
+    wordCount: 40
     linkCount: 0
-    lineCount: 11
+    lineCount: 14
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

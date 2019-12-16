@@ -31,11 +31,7 @@ public class playerController : MonoBehaviour
             //reset double jump
             currentJumps = 0;
 
-            // Recalculate move direction directly from axes
-
-            //moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            //moveDirection *= movementSpeed * sprintMultiplier;
-
+            //update Vector3 while player is grounded
             moveDirection = (Input.GetAxis("Vertical") * transform.forward * sprintMultiplier + Input.GetAxis("Horizontal") * transform.right) * movementSpeed;
         }
 
@@ -52,6 +48,9 @@ public class playerController : MonoBehaviour
         // jump
         if (Input.GetButtonDown("Jump") && currentJumps < maxJumps)
         {
+            //allow change of direction during double jump
+            moveDirection = (Input.GetAxis("Vertical") * transform.forward * sprintMultiplier + Input.GetAxis("Horizontal") * transform.right) * movementSpeed;
+
             currentJumps++;
             moveDirection.y = jumpForce;
         }

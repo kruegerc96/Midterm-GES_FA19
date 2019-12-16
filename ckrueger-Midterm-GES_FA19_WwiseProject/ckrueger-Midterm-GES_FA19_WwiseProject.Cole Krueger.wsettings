@@ -5,6 +5,7 @@
 			<PropertyList>
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\Cole Krueger\Desktop\momentum sounds"/>
 				<Property Name="Event Action List\{26D9CF9B-AEC4-41CF-92A7-F9F19E4E7B98}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{3388DE7E-D878-4F29-8440-CBAA50D9C2FE}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{6E774B0A-509A-4170-B2DE-DA2F898D0668}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{CB578E5B-3585-4F4C-A4D9-2284F7F7A619}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="ExternalSourcesInputPath" Type="string">

@@ -1,5 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	271290123	PlayFire			\Default Work Unit\PlayFire	
+	417627684	PlayMusic			\Default Work Unit\PlayMusic	
 	1702250900	PlayJet			\Default Work Unit\PlayJet	
 	3654825836	PlayLand			\Default Work Unit\PlayLand	
 
@@ -10,8 +11,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	322449557	MusicLoop	C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\.cache\Mac\SFX\MusicLoop_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MusicLoop\MusicLoop		23629460
 	327529875	gun1	C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\.cache\Mac\SFX\gun1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Fire\gun1		21580
 	767519456	MusicIntroAndFirstPart	C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\.cache\Mac\SFX\MusicIntroAndFirstPart_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MusicIntroAndFirstPart\MusicIntroAndFirstPart		20183508
+	782242906	JumpJet	C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\.cache\Mac\SFX\JumpJet_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\JumpJet		137736
 	946746949	gun5	C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\.cache\Mac\SFX\gun5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Fire\gun5		21580
 	972972394	Land1	C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\.cache\Mac\SFX\Land1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Land\Land1		53848
 	1006116287	gun4	C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\.cache\Mac\SFX\gun4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Fire\gun4		21580
-	1013599500	JumpJet	C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\.cache\Mac\SFX\JumpJet_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\JumpJet		407476
 

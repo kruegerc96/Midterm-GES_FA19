@@ -22,8 +22,9 @@
 			<Path>MainBank.bnk</Path>
 			<IncludedEvents>
 				<Event Id="271290123" Name="PlayFire" ObjectPath="\Events\Default Work Unit\PlayFire" DurationType="OneShot" DurationMin="0.121973" DurationMax="0.121973"/>
-				<Event Id="1702250900" Name="PlayJet" ObjectPath="\Events\Default Work Unit\PlayJet" DurationType="OneShot" DurationMin="2.309592" DurationMax="2.309592"/>
+				<Event Id="1702250900" Name="PlayJet" ObjectPath="\Events\Default Work Unit\PlayJet" DurationType="OneShot" DurationMin="0.780454" DurationMax="0.780454"/>
 				<Event Id="3654825836" Name="PlayLand" ObjectPath="\Events\Default Work Unit\PlayLand" DurationType="OneShot" DurationMin="0.304898" DurationMax="0.317823"/>
+				<Event Id="417627684" Name="PlayMusic" ObjectPath="\Events\Default Work Unit\PlayMusic" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="14517983" Language="SFX">
@@ -50,6 +51,10 @@
 					<ShortName>MusicIntroAndFirstPart.wav</ShortName>
 					<Path>SFX\MusicIntroAndFirstPart_D79FB2B7.wem</Path>
 				</File>
+				<File Id="782242906" Language="SFX">
+					<ShortName>JumpJet.wav</ShortName>
+					<Path>SFX\JumpJet_10C4C929.wem</Path>
+				</File>
 				<File Id="946746949" Language="SFX">
 					<ShortName>gun5.wav</ShortName>
 					<Path>SFX\gun5_10C4C929.wem</Path>
@@ -61,10 +66,6 @@
 				<File Id="1006116287" Language="SFX">
 					<ShortName>gun4.wav</ShortName>
 					<Path>SFX\gun4_10C4C929.wem</Path>
-				</File>
-				<File Id="1013599500" Language="SFX">
-					<ShortName>JumpJet.wav</ShortName>
-					<Path>SFX\JumpJet_10C4C929.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

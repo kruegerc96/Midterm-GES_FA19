@@ -30,7 +30,18 @@
 						<Action Name="" ID="{C9F2C128-E5E1-40A9-868D-F1855746EC93}" ShortID="1023932172">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="JumpJet" ID="{B7A4ADE2-D80E-46F2-941A-FD55423CAC8B}" WorkUnitID="{3A7B1332-F44F-407A-8B1A-EFBEB9C12B28}"/>
+									<ObjectRef Name="JumpJet" ID="{13DE00DE-933B-4A5B-8ED0-A6B3DB02226A}" WorkUnitID="{3A7B1332-F44F-407A-8B1A-EFBEB9C12B28}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayMusic" ID="{3388DE7E-D878-4F29-8440-CBAA50D9C2FE}">
+					<ChildrenList>
+						<Action Name="" ID="{43D170B6-AEE8-4598-974C-F4AEA399D554}" ShortID="1007134397">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{3B5DF44C-DDBC-49B9-884E-E32FD6F6BFC1}" WorkUnitID="{EDA1802C-B39C-4864-B3EB-820BC1EBE921}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

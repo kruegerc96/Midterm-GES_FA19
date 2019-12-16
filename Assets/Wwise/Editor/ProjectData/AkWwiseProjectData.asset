@@ -115,5 +115,9 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /ckrueger-Midterm-GES_FA19_WwiseProject
+  - /ckrueger-Midterm-GES_FA19_WwiseProject/Events
+  - /ckrueger-Midterm-GES_FA19_WwiseProject/Events/Default Work Unit
+  - /ckrueger-Midterm-GES_FA19_WwiseProject/SoundBanks
+  - /ckrueger-Midterm-GES_FA19_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

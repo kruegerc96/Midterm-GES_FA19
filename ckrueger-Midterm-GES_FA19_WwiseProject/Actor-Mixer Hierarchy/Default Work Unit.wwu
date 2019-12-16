@@ -3,25 +3,6 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{3A7B1332-F44F-407A-8B1A-EFBEB9C12B28}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="JumpJet" ID="{B7A4ADE2-D80E-46F2-941A-FD55423CAC8B}" ShortID="886325393">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C2A1142-2C06-4750-9999-3DB39E954D29}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7966CE81-E7E9-48FA-95A8-10C49E3C7C9F}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="JumpJet" ID="{1E06A699-8CE1-446D-89E4-E5F98D155A75}" ShortID="1013599500">
-							<Language>SFX</Language>
-							<AudioFile>JumpJet.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="JumpJet" ID="{1E06A699-8CE1-446D-89E4-E5F98D155A75}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<RandomSequenceContainer Name="Fire" ID="{B1237EF0-FC60-41F9-8E9A-CA57F885E5C7}" ShortID="965982955">
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -179,6 +160,32 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
+				<Sound Name="JumpJet" ID="{13DE00DE-933B-4A5B-8ED0-A6B3DB02226A}" ShortID="572988944">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C2A1142-2C06-4750-9999-3DB39E954D29}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7966CE81-E7E9-48FA-95A8-10C49E3C7C9F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="JumpJet" ID="{83C45003-0D99-4251-9173-4FD979704A27}" ShortID="782242906">
+							<Language>SFX</Language>
+							<AudioFile>JumpJet.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="JumpJet" ID="{83C45003-0D99-4251-9173-4FD979704A27}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

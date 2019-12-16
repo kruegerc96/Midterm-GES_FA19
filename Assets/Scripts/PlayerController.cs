@@ -54,6 +54,10 @@ public class playerController : MonoBehaviour
             currentJumps++;
             moveDirection.y = jumpForce;
         }
+        if (Input.GetButtonDown("Jump") && currentJumps == 2)
+        {
+            AkSoundEngine.PostEvent("PlayJet", gameObject);
+        }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below when the moveDirection is multiplied by deltaTime). This is because gravity should be applied as an acceleration (ms^-2)
         moveDirection.y -= gravity * Time.deltaTime;

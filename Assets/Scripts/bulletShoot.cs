@@ -41,5 +41,6 @@ public class bulletShoot : MonoBehaviour
 
         //play muzzle flash
         muzzleFlash.Emit(1);
+        AkSoundEngine.PostEvent("PlayFire", gameObject);
     }
 }

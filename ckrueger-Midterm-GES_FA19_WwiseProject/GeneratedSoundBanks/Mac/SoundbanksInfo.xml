@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Cole Krueger\Documents\GitHub\ckrueger-Midterm-GES_FA19\ckrueger-Midterm-GES_FA19_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2880737896" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\MainBank</ObjectPath>
+			<ShortName>MainBank</ShortName>
+			<Path>MainBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="271290123" Name="PlayFire" ObjectPath="\Events\Default Work Unit\PlayFire" DurationType="OneShot" DurationMin="0.121973" DurationMax="0.121973"/>
+				<Event Id="1702250900" Name="PlayJet" ObjectPath="\Events\Default Work Unit\PlayJet" DurationType="OneShot" DurationMin="2.309592" DurationMax="2.309592"/>
+				<Event Id="3654825836" Name="PlayLand" ObjectPath="\Events\Default Work Unit\PlayLand" DurationType="OneShot" DurationMin="0.304898" DurationMax="0.317823"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="14517983" Language="SFX">
+					<ShortName>gun2.wav</ShortName>
+					<Path>SFX\gun2_10C4C929.wem</Path>
+				</File>
+				<File Id="135247000" Language="SFX">
+					<ShortName>Land2.wav</ShortName>
+					<Path>SFX\Land2_10C4C929.wem</Path>
+				</File>
+				<File Id="206422427" Language="SFX">
+					<ShortName>gun3.wav</ShortName>
+					<Path>SFX\gun3_10C4C929.wem</Path>
+				</File>
+				<File Id="322449557" Language="SFX">
+					<ShortName>MusicLoop.wav</ShortName>
+					<Path>SFX\MusicLoop_D79FB2B7.wem</Path>
+				</File>
+				<File Id="327529875" Language="SFX">
+					<ShortName>gun1.wav</ShortName>
+					<Path>SFX\gun1_10C4C929.wem</Path>
+				</File>
+				<File Id="767519456" Language="SFX">
+					<ShortName>MusicIntroAndFirstPart.wav</ShortName>
+					<Path>SFX\MusicIntroAndFirstPart_D79FB2B7.wem</Path>
+				</File>
+				<File Id="946746949" Language="SFX">
+					<ShortName>gun5.wav</ShortName>
+					<Path>SFX\gun5_10C4C929.wem</Path>
+				</File>
+				<File Id="972972394" Language="SFX">
+					<ShortName>Land1.wav</ShortName>
+					<Path>SFX\Land1_10C4C929.wem</Path>
+				</File>
+				<File Id="1006116287" Language="SFX">
+					<ShortName>gun4.wav</ShortName>
+					<Path>SFX\gun4_10C4C929.wem</Path>
+				</File>
+				<File Id="1013599500" Language="SFX">
+					<ShortName>JumpJet.wav</ShortName>
+					<Path>SFX\JumpJet_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

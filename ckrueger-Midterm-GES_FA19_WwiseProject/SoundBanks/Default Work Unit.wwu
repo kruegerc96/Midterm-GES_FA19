@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{29458B2F-2522-4617-9C53-97495D3D93D7}" SchemaVersion="94">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{29458B2F-2522-4617-9C53-97495D3D93D7}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="MainBank" ID="{3D02706D-F6D3-4D1F-9711-C0C23CA5394D}">
+					<ObjectInclusionList>
+						<ObjectRef Name="PlayLand" ID="{6E774B0A-509A-4170-B2DE-DA2F898D0668}" WorkUnitID="{CEF07C52-60F4-4655-BC9E-54E06201FAA6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayJet" ID="{26D9CF9B-AEC4-41CF-92A7-F9F19E4E7B98}" WorkUnitID="{CEF07C52-60F4-4655-BC9E-54E06201FAA6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Music" ID="{3B5DF44C-DDBC-49B9-884E-E32FD6F6BFC1}" WorkUnitID="{EDA1802C-B39C-4864-B3EB-820BC1EBE921}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayFire" ID="{CB578E5B-3585-4F4C-A4D9-2284F7F7A619}" WorkUnitID="{CEF07C52-60F4-4655-BC9E-54E06201FAA6}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

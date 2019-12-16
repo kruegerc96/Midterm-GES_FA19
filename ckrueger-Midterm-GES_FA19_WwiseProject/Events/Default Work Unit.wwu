@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{CEF07C52-60F4-4655-BC9E-54E06201FAA6}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{CEF07C52-60F4-4655-BC9E-54E06201FAA6}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="PlayFire" ID="{CB578E5B-3585-4F4C-A4D9-2284F7F7A619}">
+					<ChildrenList>
+						<Action Name="" ID="{5B14F572-240D-4FDB-A1A4-DFF8AD382DB7}" ShortID="327558850">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fire" ID="{B1237EF0-FC60-41F9-8E9A-CA57F885E5C7}" WorkUnitID="{3A7B1332-F44F-407A-8B1A-EFBEB9C12B28}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayLand" ID="{6E774B0A-509A-4170-B2DE-DA2F898D0668}">
+					<ChildrenList>
+						<Action Name="" ID="{AC75CC3C-F97D-4F30-8C99-CBD65A58E8A6}" ShortID="918497093">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Land" ID="{40F938CA-F082-4C7E-AB8D-03F02D71877D}" WorkUnitID="{3A7B1332-F44F-407A-8B1A-EFBEB9C12B28}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayJet" ID="{26D9CF9B-AEC4-41CF-92A7-F9F19E4E7B98}">
+					<ChildrenList>
+						<Action Name="" ID="{C9F2C128-E5E1-40A9-868D-F1855746EC93}" ShortID="1023932172">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="JumpJet" ID="{B7A4ADE2-D80E-46F2-941A-FD55423CAC8B}" WorkUnitID="{3A7B1332-F44F-407A-8B1A-EFBEB9C12B28}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
